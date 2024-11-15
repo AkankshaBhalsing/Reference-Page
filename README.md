@@ -163,4 +163,29 @@ git branch -d feature-branch
 git push origin --delete feature-branch
 
 
+#### Maven
+# Step 3: Import the Maven Project
+Go to File > Import.
+Select Maven > Existing Maven Projects and click Next.
+Click Browse to select the root directory of your extracted project.
+Ensure the pom.xml file is detected and click Finish.
+# Step 4: Update Maven Project
+Right-click on the imported project in the Project Explorer.
+Select Maven > Update Project.
+Check the box for Force Update of Snapshots/Releases and click OK.
+# Step 5: Run the Spring Boot Application
+Right-click on the main class (the one with @SpringBootApplication annotation).
+Select Run As > Spring Boot App (or Java Application if you don't have the Spring Boot option).
+# Step 6: Access the Application
+Open your browser and navigate to http://localhost:8080 (or the configured port) to see the running application.
+6. Troubleshooting Common Issues
+Missing Dependencies: If Eclipse shows errors about missing dependencies, run:
+bash
+Copy code
+mvn clean install
+Port Conflicts: If you get a port already in use error, change the port in application.properties:
+properties
+Copy code
+server.port=8081
+
 
